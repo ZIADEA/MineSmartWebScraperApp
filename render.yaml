@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: smart-web-scraper
+    env: python
+    region: frankfurt  # ou oregon selon votre préférence
+    plan: free  # Plan gratuit
+    
+    # Build configuration
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+      python -c "import nltk; nltk.download('punkt', quiet=True)"
+    
+    # Start command
+    startCommand: gunicorn --bind 0.0.0.0:$PORT app:app --workers 1 --timeout 120
+    
+    # Environment variables (à configurer dans le dashboard)
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: FLASK_ENV
+        value: production
+      - key: PYTHONPATH
+        value: .
+      - key: OMP_NUM_THREADS
+        value: "1"
+      - key: MKL_NUM_THREADS  
+        value: "1"
+    
+    # Health check
+    healthCheckPath: /
+
+# Database (optionnel - pour remplacer le stockage en mémoire)
+databases:
+  - name: scraper-db
+    databaseName: scraper_db
+    user: scraper_user
+    plan: free  # PostgreSQL gratuit

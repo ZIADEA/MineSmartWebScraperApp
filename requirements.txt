@@ -1,0 +1,81 @@
+# Core Flask
+Flask==3.1.1
+gunicorn==21.2.0
+Werkzeug==3.1.3
+
+# Flask extensions
+flask-babel==4.0.0
+flask-cors==6.0.0
+Flask-Login==0.6.3
+
+# Web scraping & automation
+playwright==1.52.0
+beautifulsoup4==4.13.4
+requests==2.32.3
+lxml==5.4.0
+
+# Cloud storage
+cloudinary==1.40.0
+
+# AI/ML - Optimized versions
+huggingface-hub==0.32.2
+transformers==4.51.3
+torch==2.7.0
+torchvision==0.22.0
+sentence-transformers==4.1.0
+
+# OCR - Keep PaddleOCR but lighter
+paddleocr==2.10.0
+paddlepaddle==2.5.0
+opencv-python-headless==4.11.0.86
+
+# NLP
+nltk==3.9.1
+langchain==0.2.17
+langchain-community==0.2.17
+langchain-core==0.2.43
+openai==1.63.2
+
+# Data processing
+numpy==1.24.4
+pandas==1.5.3
+Pillow==11.2.1
+scikit-learn==1.6.1
+
+# Utilities
+python-dotenv==1.1.0
+PyYAML==6.0.2
+tqdm==4.67.1
+joblib==1.5.1
+
+# Security & validation
+pydantic==2.11.5
+cryptography==45.0.3
+
+# File processing
+python-docx==1.1.2
+PyMuPDF==1.20.2
+pdf2image==1.17.0
+openpyxl==3.1.5
+
+# Database (for metadata)
+SQLAlchemy==2.0.41
+
+# Standard libraries
+certifi==2025.4.26
+charset-normalizer==3.4.2
+click==8.2.1
+idna==3.10
+Jinja2==3.1.6
+MarkupSafe==3.0.2
+urllib3==2.4.0
+packaging==24.2
+python-dateutil==2.9.0.post0
+pytz==2025.2
+six==1.17.0
+
+# Removed problematic dependencies:
+# - pywin32 (Windows only)
+# - detectron2 (replaced by HF API)
+# - Heavy visualization libs
+# - GPU-specific packages
